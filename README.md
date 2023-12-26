@@ -10,7 +10,7 @@ Install:
 ```bash
 $ git clone https://github.com/koyasoo/dotfiles.git
 $ cd dotfiles
-$ sh install
+$ sh install.sh
 ```
 
 ## Caution
