@@ -1,3 +1,4 @@
+brew "mas"
 brew "ffmpeg"
 cask "charles"
 cask "deepl"
@@ -8,3 +9,4 @@ cask "postman"
 cask "sublime-text"
 cask "visual-studio-code"
 cask "warp"
+mas "Ethernet Menu",id: 1549412235
