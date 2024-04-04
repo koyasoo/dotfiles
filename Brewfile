@@ -9,4 +9,5 @@ cask "postman"
 cask "sublime-text"
 cask "visual-studio-code"
 cask "warp"
+cask "obs"
 mas "Ethernet Menu",id: 1549412235
