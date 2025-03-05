@@ -12,4 +12,5 @@ cask "warp"
 cask "obs"
 cask "chatgpt"
 cask "discord"
+cask "gcenx/wine/kegworks", args: { no_quarantine: true }
 mas "Ethernet Menu",id: 1549412235
