@@ -7,7 +7,7 @@ layoutUnits = {
   rightThird = { x = 0.70, y = 0.00, w = 0.30, h = 1.00 },
   leftTwoThirds = { x = 0.00, y = 0.00, w = 0.70, h = 1.00 },
   topRightQuarter = { x = 0.70, y = 0.00, w = 0.30, h = 0.50 },
-  bottomRightQuarter = { x = 0.70, y = 0.50, w = 0.30, h = 0.50 }
+  bottomLeftOver = { x = 0.00, y = 0.20, w = 0.80, h = 0.80 }
 }
 
 function bindHotKey(modifiers, key, action)
@@ -52,7 +52,7 @@ hotKeyBindings = {
   { { 'ctrl', 'shift', 'command' }, 'right', moveTo(layoutUnits.rightThird) },
   { { 'ctrl', 'shift', 'command' }, 'left', moveTo(layoutUnits.leftTwoThirds) },
   { { 'ctrl', 'shift', 'command' }, 'up', moveTo(layoutUnits.topRightQuarter) },
-  { { 'ctrl', 'shift', 'command' }, 'down', moveTo(layoutUnits.bottomRightQuarter) },
+  { { 'ctrl', 'shift', 'command' }, 'down', moveTo(layoutUnits.bottomLeftOver) },
 
   { { 'ctrl' }, 'q', toggleAppVisibility('Warp', '/Applications/Warp.app') },
   { { 'ctrl' }, 'e', toggleAppVisibility('Finder', '/System/Library/CoreServices/Finder.app') }
