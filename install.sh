@@ -6,6 +6,7 @@ SCRIPT_DIR_PATH=$(cd $(dirname $0); pwd)
 HAMMERSPOON_CONFIG_PATH="$HOME/.hammerspoon/init.lua"
 HOMEBREW_INSTALL_URL="https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh"
 MAC_MOUSE_SPEED=8
+HOMEBREW_PATH="/opt/homebrew/bin"
 
 # Logging function
 log() {
@@ -17,6 +18,20 @@ handle_error() {
   log "ERROR: $1"
   echo "ERROR: $1"
   exit 1
+}
+
+# Update PATH for Homebrew
+update_path_for_homebrew() {
+  if [ -d "${HOMEBREW_PATH}" ]; then
+    export PATH="${HOMEBREW_PATH}:${PATH}"
+    if ! echo "${PATH}" | grep -q "${HOMEBREW_PATH}"; then
+      handle_error "Failed to update PATH for Homebrew."
+    fi
+    log "PATH updated for Homebrew: ${HOMEBREW_PATH}"
+    echo "PATH updated for Homebrew."
+  else
+    handle_error "Homebrew directory not found at ${HOMEBREW_PATH}."
+  fi
 }
 
 # Hammerspoon setup
@@ -34,9 +49,11 @@ install_homebrew() {
     /bin/bash -c "$(curl -fsSL ${HOMEBREW_INSTALL_URL})" || handle_error "Homebrew installation failed."
     log "Homebrew installed successfully."
     echo "Homebrew installation completed."
+    update_path_for_homebrew
   else
     log "Homebrew is already installed."
     echo "Homebrew is already installed."
+    update_path_for_homebrew
   fi
 }
 
