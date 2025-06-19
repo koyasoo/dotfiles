@@ -12,7 +12,7 @@ if [ "$(uname)" == 'Darwin' ]; then
   brew bundle
 
   # マウスカーソルの速度を速くする
-  defaults write "Apple Global Domain" com.apple.mouse.scaling 11
+  defaults write "Apple Global Domain" com.apple.mouse.scaling 8
 
   # アプリの整列
   defaults write com.apple.dock ResetLaunchPad -bool true\nkillall Dock
